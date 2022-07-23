@@ -1,0 +1,86 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  transition: .3s ease;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #d9e5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.tabs {
+
+  width: 450px;
+  height: 250px;
+  /* border: 6px solid black; */
+  position: relative;
+  
+
+}
+.tabs .tab-header {
+    background: #f5f5f5;
+    padding: 10px;
+    
+    display: flex;
+
+}
+.tabs .tab-header > div{
+    position: relative;
+    padding: 10px;
+    z-index: 2;
+    color: #888;
+    cursor: pointer;
+    width: 25%;
+    font-weight: 600;
+    text-align: center;
+}
+.tabs .tab-header > div.active{
+    color: #387be2;
+}
+
+.tabs .tab-indicator{
+    position: absolute;
+    width: calc(25% - 5px);
+    height: 40px;
+    background:   #d9e5f9;
+    top: 10px;
+    left: 10px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+}
+
+
+.tabs .tab-body{
+    position: relative;
+    height: calc(100% - 50px);
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background: #f5f5f5;
+    overflow: hidden;
+}
+.tabs .tab-body > div{
+    position: absolute;
+    opacity: 0;
+    top: -100%;
+    transform: translateY(-10px);
+    /* transition:all 0.5s ease-in-out; */
+}
+.tabs .tab-body > div.active{
+    transition: 0.5s;
+    opacity: 1;
+    transform: translateY(0px);
+    top: 30px;
+}
+.tabs .tab-body h1{
+    color: #222;
+    margin-bottom: 10px;
+}
+.tabs .tab-body p{
+    color: #555;
+    font-size: 15px;
+}
